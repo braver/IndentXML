@@ -91,14 +91,14 @@ class IndentXmlCommand(BaseIndentCommand):
         # figure out encoding
         utfEncoded = s.encode("utf-8")
         encoding = "utf-8"
-        encoding_match = re.compile(b"<\?.*encoding=\"(.*?)\".*\?>").match(utfEncoded)
+        encoding_match = re.compile(br"<\?.*encoding=\"(.*?)\".*\?>").match(utfEncoded)
         if encoding_match:
             encoding = encoding_match.group(1).decode("utf-8").lower()
 
         s = s.encode(encoding)
-        xml_header = re.compile(b"<\?.*\?>").match(s)
+        xml_header = re.compile(br"<\?.*\?>").match(s)
         # convert to plain string without indents and spaces
-        s = re.compile(b'>\s+([^\s])', re.DOTALL).sub(b'>\g<1>', s)
+        s = re.compile(br'>\s+([^\s])', re.DOTALL).sub(br'>\g<1>', s)
         try:
             s = parseString(s).toprettyxml()
         except ExpatError as err:
@@ -106,7 +106,7 @@ class IndentXmlCommand(BaseIndentCommand):
             sublime.status_message(message)
             return
         # remove line breaks
-        s = re.compile('>\n\s+([^<>\s].*?)\n\s+</', re.DOTALL).sub('>\g<1></', s)
+        s = re.compile(r'>\n\s+([^<>\s].*?)\n\s+</', re.DOTALL).sub(r'>\g<1></', s)
         # remove xml header
         s = s.replace("<?xml version=\"1.0\" ?>", "").strip()
         if xml_header:

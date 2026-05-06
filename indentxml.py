@@ -4,7 +4,6 @@ import re
 import json
 from xml.dom.minidom import parseString
 from xml.parsers.expat import ExpatError, errors
-from os.path import basename, splitext
 
 
 class BaseIndentCommand(sublime_plugin.TextCommand):

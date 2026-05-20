@@ -1,6 +1,6 @@
 [
     {
-        "caption": "Auto indent",
+        "caption": "Indent XML or JSON",
         "command": "auto_indent"
     },
     {
@@ -10,5 +10,5 @@
     {
         "caption": "Indent JSON",
         "command": "indent_json"
-    }    
+    }
 ]

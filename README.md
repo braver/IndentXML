@@ -1,63 +1,48 @@
 # Indent XML and JSON in Sublime Text
 
-What is the goal of the Indent XML plugin? Short answer is converting this XML ...
+Auto-indent data structures in XML or JSON format to readable format. Uses Python's `xml.dom.minidom` and `json` libraries under the hood to go from ...
+
 
 ```xml
-    <root><node attr="1" attr2="4"><node /></node></root>
+<root><node attr="1" attr2="4"><node /></node></root>
 ```
 
 ... to this:
 
 ```xml
-    <root>
-        <node attr="1" attr2="4">
-		    <node/>
-	    </node>
-    </root>
+<root>
+	<node attr="1" attr2="4">
+		<node/>
+	</node>
+</root>
 ```
 
-Looks good? It also can convert this JSON ... 
+## Features
 
-```json
-    { "root": [ { "field": "val1", "field2": "val2" }, { "arr": [1, 3, "three"] }] }
-```
+- Indent only selected text
+- Supports multiple selections of XML and JSON data
+- Detects format based on syntax or heuristics (in plain text)
+- Commands are available via the Selection menu, the command palette and keyboard shortcuts.
 
-... to this:
+### Key bindings
 
-```json
-    {
-        "root": [
-            {
-                "field": "val1",
-                "field2": "val2"
-            },
-            {
-                "arr": [
-                    1,
-                    3,
-                    "three"
-                ]
-            }
-        ]
-    }
-```
-    
-Want more? It can indent only selected text - including multiple selections and even mixed XML / JSON selections. It is smart enough to recognize XML or JSON even if you are editing plain text. Indent plugin won't mess up your keyboard shortcuts because it uses "chord" command Ctrl+K, Ctrl+F (this mean hold Ctrl, press K then press F, release Ctrl) and also available in "Selection" menu.
+Uses the `Ctrl+K, Ctrl+F` "chord" command, meaning hold Ctrl, press K then press F, release Ctrl. On MacOS use `Cmd` instead of `Ctrl`.
 
 ## Installation
 
-Just use [Package Control R](https://packages.sublimetext.io) and search for "indent xml" plugin.
+Just use [Package Control](https://packages.sublimetext.io) and search for the "Indent XML" plugin, or copy the install command from the [PC page](https://packages.sublimetext.io/packages/Indent%20XML) for this package.
 
-## Usage
+## Testing
 
-Click on Tools->Command Pallette... (or Ctrl+shift+P if you're a keyboard person) and then chose "Indent XML".
-
-## Feedback, support, contributions
-
-Available on [Github](https://github.com/braver/IndentXML).
+- Have both Indent XML and [UnitTesting](https://packages.sublimetext.io/packages/UnitTesting) installed manually in the ST Packages directory.
+- Run the `./run_tests.sh` script.
 
 ## Buy me a coffee 
 
-☕️👌🏻
+Please feel free to make a little donation towards the coffee that keeps this labour of love running. It's much appreciated!
 
-If you enjoy this package, feel free to make a little [donation via PayPal](https://paypal.me/koenlageveen) towards the coffee that keeps this project running. It's much appreciated!
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G21VT3Z6)
+
+---
+
+Originally forked from [alek-sys/sublimetext_indentxml](https://github.com/alek-sys/sublimetext_indentxml).

@@ -1,6 +1,7 @@
 import os
 import re
 import io
+import pathlib
 
 from base import IndentXmlBase
 
@@ -9,9 +10,7 @@ class TestBasicIndentXml(IndentXmlBase):
     pass
 
 
-fixtures_path = os.getenv("ST_FIXTURES_PATH")
-if not fixtures_path:
-    raise Exception("To run the unit test suite set ST_FIXTURES_PATH variable to point to 'fixtures' directory")
+fixtures_path = os.path.join(pathlib.Path(__file__).parent.resolve(), 'fixtures')
 
 
 def setup_all_fixtures():

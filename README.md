@@ -30,11 +30,11 @@ Uses the `Ctrl+K, Ctrl+F` "chord" command, meaning hold Ctrl, press K then press
 
 ## Installation
 
-Just use [Package Control](https://packages.sublimetext.io) and search for the "Indent XML" plugin, or copy the install command from the [PC page](https://packages.sublimetext.io/packages/Indent%20XML) for this package.
+Just use [Package Control](https://packages.sublimetext.com) and search for the "Indent XML" plugin, or copy the install command from the [PC page](https://packages.sublimetext.com/packages/Indent%20XML) for this package.
 
 ## Testing
 
-- Have both Indent XML and [UnitTesting](https://packages.sublimetext.io/packages/UnitTesting) installed manually in the ST Packages directory.
+- Have both Indent XML and [UnitTesting](https://packages.sublimetext.com/packages/UnitTesting) installed manually in the ST Packages directory.
 - Run the `./run_tests.sh` script.
 
 ## Buy me a coffee 
